@@ -15,8 +15,8 @@
 // ---------------------   PARAMETRES MODIFIABLE DU PROGRAM    -----------------------------------
 // Version et numero de serie
 String fichier_config = "/config.txt";   // nom du fichier de configuration
-String dataFilename = "/datalog.txt";        // nom du fichier de données
-char versoft[] = "2.1";                  // version du code pour littobs 2.2 et 2.3 et 2.5 (attention 2.5 il faut modifier la pin de control 5V pour la pin 14)
+String dataFilename = "/datalog.csv";        // nom du fichier de données
+char versoft[] = "2.1 en cours";                  // version du code
 // --------------------     FIN DES PARAMETRES MODIFIABLES     -----------------------------------
 
 
@@ -53,8 +53,8 @@ String nbrValue;
 
 // déclaration pour gestion des Led et interrupteur
 const int greenled = 25;               // Led for information
-const int serverpin= 15;                // Pin with reed magnet switch for server start
-const int control_pin = 14;             // pin qui controle l'allumage du régulateur
+const int serverpin=27;                // Pin with reed magnet switch for server start
+const int control_pin = 4;             // pin qui controle l'allumage du régulateur
 
 
 //déclaration pour capteur de pression et température de chez Blue robotic
@@ -122,167 +122,169 @@ void setup() {
   // ------------------           SETUP (run loop, and what we need for each loop)    ------------------------------------------
   // ------------------        HERE IS NEEDED THE PARAMETER FOR THE ENTIER PROGRAMM   ------------------------------------------
 
-
-      if(debug_mode==1) Serial.begin(115200);                        // communication avec le PC
-      
-
-      // initiate pin
+      //Start Serial and définition pin      
+      Serial.begin(115200);                        // communication avec le PC
       pinMode(greenled, OUTPUT);                   // initiate light
       pinMode(control_pin, OUTPUT);                // initiate on Atlas EC
       pinMode(serverpin, INPUT_PULLUP);            // intitiate Pin for server
 
-      // Wakeup and power on sensors, pin, SD etc....
-      if (debug_mode==1) Serial.println("------ WAKE UP AND START Measures ---------"); 
-      if (led_mode==1) digitalWrite(greenled, HIGH);                      // mean wake up and start measures
-      digitalWrite(control_pin, HIGH);               //power on conductivity sensors
-      delay(500);             //few time to let the atlas and SD module start correctly
+      //power all components (led and sensors)
+      digitalWrite(greenled, HIGH);
+      delay(1000);
+      digitalWrite(control_pin, HIGH);              
+      //digitalWrite(serverpin, HIGH);
 
+      //delay after starting to avoid issue with SD and other sensors
+      delay(500);
+
+      //Start other things
       Wire.begin();                                // initiate I2C communication
-      delay(200);
 
+      //delay(300);                                 // delay pour eviter les ecriture trop rapide sur la carte SD en cas de faux contact à l'allumag et laisser le temps au autre composant (atlas de s'allumer correctement)
 
-      // initialisation sensors
-      sensor_fastTemp.init();                      // initiate bluerobotics température sensors
-      delay(300);
-      sensor_bar30.init();                        // initiate BlueRobotics Pressure Sensors
-
-      delay(300);                                 // delay pour eviter les ecriture trop rapide sur la carte SD en cas de faux contact à l'allumag et laisser le temps au autre composant (atlas de s'allumer correctement)
-
-
-
-      
-      
+    
   if(bootCount == 0){
   // --------------        HERE IS ONLY THE INTRODUCION           -----------------------------------------------------------
   // -------------- run just once at the startup, and ignore at each loop ---------------------------------------------------
-
-      // read values on configuration file, and store data into variable
-           
-            test_sd();                 // test if SD is present and ok
-            delay(300);
     
-            // read config file
-            lecture_config();
-              // reattribute values on SRAM variables thanks to file :  config.txt
-              TIME_TO_SLEEP=delay_batch.toInt();         // en s
-              nbrMes=number_measures.toInt();            
-              debug_mode=debug_mode_sd.toInt();  
-              led_mode=led_mode_sd.toInt();  
+      // read values on configuration file, and store data into variable 
+        test_sd();                 // test if SD is present and ok
+        delay(300);
+
+        // read config file
+        lecture_config();        
+        // reattribute values on SRAM variables thanks to file :  config.txt
+        TIME_TO_SLEEP=delay_batch.toInt();         // en s
+        nbrMes=number_measures.toInt();            
+        debug_mode=debug_mode_sd.toInt();  
+        led_mode=led_mode_sd.toInt();  
 
 
       // if magnet is detected start the web server and stop the programm here
-      if(digitalRead(serverpin)==LOW){
-        blinkled(8,150);
-        digitalWrite(greenled, HIGH);
-        Serial.println("Server mode");
-        serveur();
-        while(1){};
-      }
+        if(digitalRead(serverpin)==LOW){
+          blinkled(8,150);
+          digitalWrite(greenled, HIGH);
+          Serial.println("Server mode");
+          serveur();
+          while(1){};
+        }
       
       //Create and Write the 1st ligne of the CSV file
-            String datachain = "";
-            datachain += "Date & heure"; datachain += ";"; 
-            for(int n=1; n<=nbrMes; n++){
-              datachain += "Profondeur(m)"; datachain += ";"; 
-              datachain += "Temperature mer (C)"; datachain += ";"; 
-              datachain += "Conductivity(ms/cm)"; datachain += ";"; 
-              //datachain += "Salinity"; datachain += ";";
-            }
+        String datachain = "";
+        datachain += "Date & heure"; datachain += ";"; 
+        for(int n=1; n<=nbrMes; n++){
+          datachain += "Profondeur(m)"; datachain += ";"; 
+          datachain += "Temperature mer (C)"; datachain += ";"; 
+          datachain += "Conductivity(ms/cm)"; datachain += ";"; 
+          //datachain += "Salinity"; datachain += ";";
+        }
     
       // save the datachain on the SD card
-            File dataFile = SD.open(dataFilename, FILE_APPEND);       // FILE_APPEND pour esp32, FILE_WRITE pour arduino
-            if (dataFile) {                                        // if the file is available, write to it:
-              dataFile.println(datachain);
-              dataFile.close();
-              if (debug_mode==1) Serial.println("Fichier créer avec succes");
-              if (debug_mode==1) {Serial.print("Filename : "); Serial.println(dataFilename);}
-            }
-            else {                                                 // if the file isn't open, pop up an error:
-              if (debug_mode==1) Serial.println("error opening file");
-              for (int i=0; i<=5; i++){
-                  errormessage_sd();
-              }
-            }
-
-      // Sleeping of sensors, pin and other...
-      all_sleep();
+        File dataFile = SD.open(dataFilename, FILE_APPEND);       // FILE_APPEND pour esp32, FILE_WRITE pour arduino
+        if (dataFile) {                                        // if the file is available, write to it:
+          dataFile.println(datachain);
+          dataFile.close();
+          if (debug_mode==1) Serial.println("Fichier créer avec succes");
+          if (debug_mode==1) {Serial.print("Filename : "); Serial.println(dataFilename);}
+        }
+        else {                                                 // if the file isn't open, pop up an error:
+          if (debug_mode==1) Serial.println("error opening file");
+          for (int i=0; i<=5; i++){
+              errormessage_sd();
+          }
+        }
 
       bootCount = bootCount+1;   // changement du numéro de compteur pour passer directement dans programm loop apres le reveil
-  
   }
   else{
   // ---------------        HERE IS THE MAIN PROGRAMM LOOP         ----------------------------------------------------------
   // ---------------         Programm run at each loop             ----------------------------------------------------------
 
+      // Wakeup and power on sensors, pin, SD etc....
+        if (debug_mode==1) Serial.print("------ WAKE UP AND START Measures ---------"); 
+        //if (led_mode==1) digitalWrite(greenled, HIGH);                      // mean wake up and start measures
+
+        //blinkled(5,200);  // just to visualize a start, not mandatory
+
+
+      // initialisation sensors
+        //sensor_fastTemp.init();                      // initiate bluerobotics température sensors
+        //sensor_bar30.init();                        // initiate BlueRobotics Pressure Sensors
+
       // read values on configuration file, and store data into variable
-           
-            test_sd();                 // test if SD is present and ok
-            delay(300);
-    
-            // read config file
-            lecture_config();
-              // reattribute values on SRAM variables thanks to file :  config.txt
-              TIME_TO_SLEEP=delay_batch.toInt();         // en s
-              nbrMes=number_measures.toInt();            
-              debug_mode=debug_mode_sd.toInt();  
-              led_mode=led_mode_sd.toInt();  
+        test_sd();                 // test if SD is present and ok
+        delay(300);
+
+        // read config file
+        lecture_config();
+          // reattribute values on SRAM variables thanks to file :  config.txt
+          TIME_TO_SLEEP=delay_batch.toInt();         // en s
+          nbrMes=number_measures.toInt();            
+          debug_mode=debug_mode_sd.toInt();  
+          led_mode=led_mode_sd.toInt();  
 
  
+      // READ SENSORS -----------------------
+      
 
-          
-            // test if SD is present and ok
-            //test_sd();   
-            //delay(300);  
+        // Creating new datachain to store sensors values
+        String datachain = "";                                  // initiate datachain a empty values
+        lecture_rtc();               // read RTC Sensors just once
+        datachain += datetime; datachain += ";";                // store date and time on datachain
+        mesure_pressure();
+        datachain += wat_depth; datachain += ";"; 
+        mesure_temp();
+        datachain += fast_temp; datachain += ";";
+        mesureEC();
+        datachain += ecData; datachain += ";"; 
 
-      // Read all sensors     
-            lecture_rtc();               // read RTC Sensors just once
-    
-            // Creating new datachain to store sensors values
-            String datachain = "";                                  // initiate datachain a empty values
-            datachain += datetime; datachain += ";";                // store date and time on datachain
-            
-            //read sensors several times and add values to datachain
-            for(int n=1; n<=nbrMes; n++){
-              mesure_pressure();
-              mesure_temp();
-               datachain += wat_depth; datachain += ";"; 
-               // datachain += wat_temp; datachain += ";";    // si température du capteur Bar30 requise
-               datachain += fast_temp; datachain += ";";
-              mesureEC(); 
-               datachain += ecData; datachain += ";"; 
-               //datachain += Salinity; //datachain += ";";   // si fonction de calcul de salinité uniquement
-            }
+        //read sensors several times and add values to datachain
+        // for(int n=1; n<=nbrMes; n++){
+        //   mesure_pressure();
+        //   mesure_temp();
+        //     datachain += wat_depth; datachain += ";"; 
+        //     // datachain += wat_temp; datachain += ";";    // si température du capteur Bar30 requise
+        //     datachain += fast_temp; datachain += ";";
+        //   mesureEC(); 
+        //     datachain += ecData; datachain += ";"; 
+        //     //datachain += Salinity; //datachain += ";";   // si fonction de calcul de salinité uniquement
+        // }
 
-            // print datachain
-            if (debug_mode==1) {
-              Serial.print("DATACHAIN COMPLETE:"); 
-              Serial.println(datachain);
-            }
+        // print datachain
+        if (debug_mode==1) {
+          Serial.print("DATACHAIN COMPLETE:"); 
+          Serial.println(datachain);
+        }
 
     
       // record datachain on SD card
-            File dataFile = SD.open(dataFilename, FILE_APPEND);
-            if (dataFile) {                                        // if the file is available, write to it:
-              dataFile.println(datachain);
-              dataFile.close();
-              if (debug_mode==1) Serial.println("ok : Datachain saved on SD card !");
-            }
-            else {                                                 // if the file isn't open, pop up an error:
-              if (debug_mode==1) Serial.println("error opening file");
-              for (int i=0; i<=5; i++){
-                  errormessage_sd();
-              }
-            }
+        File dataFile = SD.open(dataFilename, FILE_APPEND);
+        if (dataFile) {                                        // if the file is available, write to it:
+          dataFile.println(datachain);
+          dataFile.close();
+          if (debug_mode==1) Serial.println("ok : Datachain saved on SD card !");
+        }
+        else {                                                 // if the file isn't open, pop up an error:
+          if (debug_mode==1) Serial.println("error opening file");
+          for (int i=0; i<=5; i++){
+              errormessage_sd();
+          }
+        }
 
-            delay(400);
-
-      // Sleeping of sensors and other
-            all_sleep();
-        
+        delay(400);
+     
   } // End of the loop programm
   
+  // Turn of sensors, pin and other...
+  digitalWrite(control_pin, LOW); 
+  delay(1000);
+
+  blinkled(2,150);   //info for turning of all things             
+  digitalWrite(greenled, LOW);
+  delay(300);              
   
-  // entre esp32 into sleep mode
+  
+  // enter esp32 into sleep mode
   if(debug_mode==1) Serial.println(" --> Going to sleep");
 
   esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);
@@ -302,35 +304,111 @@ void loop() {
 //              FONCTIONs de gestions des sensors
 /////////////////////////////////////////////////////////////////
 
-void mesure_pressure() {                              // fonction mesure de la pression et température sur le capteur blue robotics
+// void init_pressure(){
 
-  // Update pressure and temperature readings
-  sensor_bar30.read();
+//   while (!sensor.init()) {
+//     Serial.println("Init failed!");
+//     Serial.println("Are SDA/SCL connected correctly?");
+//     Serial.println("Blue Robotics Bar30: White=SDA, Green=SCL");
+//     Serial.println("\n\n\n");
+//     delay(5000);
+//   }
+  
 
-  wat_pressure = sensor_bar30.pressure();
-  wat_temp = sensor_bar30.temperature();
-  wat_depth = sensor_bar30.depth();
-  alt = sensor_bar30.altitude();
+  
+// }
 
-  if (debug_mode==1) {
-    Serial.println("--- Pressure Sensor :");
-    Serial.print("Pressure: ");
-    Serial.print(wat_pressure);
-    Serial.println(" mbar");
+
+
+// void mesure_pressure() {                              // fonction mesure de la pression et température sur le capteur blue robotics
+//   //Initiate pressure
+//   sensor_bar30.init();
+
+//   sensor.setModel(MS5837::MS5837_30BA);
+//   sensor.setFluidDensity(1029); // kg/m^3 (freshwater, 1029 for seawater) 
+
+//   delay(300);
+
+//   // Update pressure and temperature readings
+//   sensor_bar30.read();
+
+//   wat_pressure = sensor_bar30.pressure();
+//   wat_temp = sensor_bar30.temperature();
+//   wat_depth = sensor_bar30.depth();
+//   alt = sensor_bar30.altitude();
+
+//   if (debug_mode==1) {
+//     Serial.println("--- Pressure Sensor :");
+//     Serial.print("Pressure: ");
+//     Serial.print(wat_pressure);
+//     Serial.println(" mbar");
   
-    Serial.print("Temperature: ");
-    Serial.print(wat_temp);
-    Serial.println(" deg C");
+//     Serial.print("Temperature: ");
+//     Serial.print(wat_temp);
+//     Serial.println(" deg C");
   
-    Serial.print("Depth: ");
-    Serial.print(wat_depth);
-    Serial.println(" m");
+//     Serial.print("Depth: ");
+//     Serial.print(wat_depth);
+//     Serial.println(" m");
   
-    Serial.print("Altitude: ");
-    Serial.print(alt);
-    Serial.println(" m above mean sea level");
+//     Serial.print("Altitude: ");
+//     Serial.print(alt);
+//     Serial.println(" m above mean sea level");
+//   }
+// }
+
+void mesure_pressure(){
+  // suppose wire.begin() was declared on the begining
+  // Initialization and declaration
+  while (!sensor_bar30.init()) {
+    Serial.println("Init failed, check wiring");
+    delay(3000);
   }
+  
+  sensor_bar30.setModel(MS5837::MS5837_30BA);
+  sensor_bar30.setFluidDensity(1029); // kg/m^3 (freshwater, 1029 for seawater)
+
+
+  // Read measure and saves them in a table
+  float table[nbrMes];
+  for ( int i=0 ; i < nbrMes; i++)
+  {
+    sensor_bar30.read();
+    //Serial.print("pressure : "); Serial.println(sensor_bar30.pressure());
+    table[i]=sensor_bar30.depth();
+    delay(100);
+  }
+
+  // order the table and find the median value
+  //Serial.println("find the median value : ");
+  for (int i = 0; i < nbrMes ; i++)
+  {
+    for (int j = i; j < nbrMes; j++)
+    {
+      if (table[j] < table[i]) {
+        float tmp = table[i];
+        table[i] = table[j];
+        table[j] = tmp;
+      }
+    }
+  }
+
+  int m = 0;
+  // If number of element is impair, add 0.5
+  if(nbrMes%2==0) {m = nbrMes /2 ;
+  }else{m = nbrMes /2 +0.5;}
+
+  wat_depth = table[m];
+  Serial.print("Pressure : ");
+  Serial.println(wat_depth);
+
 }
+
+
+
+
+
+
 
 
 //// Test/initialization pressure sensor
@@ -351,14 +429,41 @@ void mesure_pressure() {                              // fonction mesure de la p
 
 
 void mesure_temp(){
-  sensor_fastTemp.read();
-  fast_temp = sensor_fastTemp.temperature();
-  delay(200);
-  if (debug_mode==1) {
-    Serial.print("Température : ");
-    Serial.print(fast_temp);
-    Serial.println(" dec C");
+  // supposed a previous Wire.begin() is actived
+  // initialize sensors fast temp
+  sensor_fastTemp.init();
+
+  // Read measure and saves them in a table
+  float tableT[nbrMes];
+  for ( int i=0 ; i < nbrMes; i++)
+  {
+    sensor_fastTemp.read();
+    tableT[i]=sensor_fastTemp.temperature();
+    //Serial.print("Temp : "); Serial.println(sensor_fastTemp.temperature());
+    delay(100);
   }
+
+  // order the table and find the median value
+  for (int i = 0; i < nbrMes ; i++)
+  {
+    for (int j = i; j < nbrMes; j++)
+    {
+      if (tableT[j] < tableT[i]) {
+        float tmp = tableT[i];
+        tableT[i] = tableT[j];
+        tableT[j] = tmp;
+      }
+    }
+  }
+
+  int m = 0;
+  // If number of element is impair, add 0.5
+  if(nbrMes%2==0) {m = nbrMes /2 ;
+  }else{m = nbrMes /2 +0.5;}
+
+  fast_temp = tableT[m];
+  Serial.print("Temperature : ");
+  Serial.println(fast_temp);
 }
 
 
@@ -502,7 +607,7 @@ void lecture_rtc() {                          // fonction lecture de l'horloge R
     Serial.println("--- RTC values :");
     Serial.print("Date :"); Serial.println(datenum);
     Serial.print("Time :"); Serial.println(timenum);
-    Serial.print("DateTime"); Serial.println(datetime);
+    Serial.print("DateTime : "); Serial.println(datetime);
   }
 
 
