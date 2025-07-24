@@ -2,8 +2,6 @@
 description: >-
   Nous remercions Jonathan Flye-Sainte-Marie (LEMAR/IUEM/UBO) ainsi qu'Emmanuel
   Augereau (CNRS/IUEM/UBO) pour la conception de ces caissons.
-cover: .gitbook/assets/Caisson OSO CTD (1).png
-coverY: 0
 ---
 
 # Module 2 : Caisson CTD

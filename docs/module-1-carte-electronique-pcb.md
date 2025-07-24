@@ -1,8 +1,3 @@
----
-cover: .gitbook/assets/IMG-5872 (1).jpg
-coverY: 0
----
-
 # Module 1 : Carte électronique PCB
 
 ## Compétences requises

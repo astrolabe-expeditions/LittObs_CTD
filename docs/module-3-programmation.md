@@ -1,7 +1,3 @@
----
-coverY: 0
----
-
 # Module 3 : Programmation
 
 Le **code** se trouve sur : [https://github.com/CedricCourson/LittObs](https://github.com/CedricCourson/LittObs)﻿﻿\

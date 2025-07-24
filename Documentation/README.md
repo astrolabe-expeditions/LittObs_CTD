@@ -1,8 +1,3 @@
----
-cover: ../docs/.gitbook/assets/P6202017.JPG
-coverY: 0
----
-
 # LittObs | Sonde CTD
 
 ## Description
