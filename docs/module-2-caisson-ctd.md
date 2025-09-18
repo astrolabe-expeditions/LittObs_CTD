@@ -6,7 +6,7 @@ description: >-
 
 # Module 2 : Caisson CTD
 
-## Compétences requises
+### Compétences requises
 
 * Découpeuse laser
 * Imprimante 3D&#x20;
@@ -33,7 +33,7 @@ Liste du matériel
 * Joints (à préciser)  x2
 * Joints 2mm épaisseur - diamètres trou﻿
 
-**## Image du matériel**
+### **Image du matériel**
 
 <div align="left"><figure><img src=".gitbook/assets/image (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
@@ -65,15 +65,15 @@ Les modules sont réalisables séparément et simultanément.
 \
 Caisson conçu pour les sondes CTD.
 
-\
-&#xNAN;**## Vue d'ensemble du caisson**
+### Vue d'ensemble du caisson
 
 ![](<.gitbook/assets/Caisson OSO CTD (2).png>)
 
 ![](<.gitbook/assets/Caisson OSO CTD (1) (1).png>)
 
-\
-&#xNAN;**## Impression des supports PCB à l'imprimante 3D**
+
+
+### **Impression des supports PCB à l'imprimante 3D**
 
 \
 Imprimer les supports PCB à l'imprimante 3D.\
@@ -86,8 +86,7 @@ Ci-joint, les fichiers en ".stl" à imprimer
 [bride\_inférieure\_PCB v6.stl](https://prod-files-secure.s3.us-west-2.amazonaws.com/1acf120e-63a9-4ded-8ae1-b4d03af0a47f/7cb4b184-c573-4783-a7d2-35a51a286fe7/bride_infrieure_PCB_v6.stl)  -  48 min, 5g @ 50% infill, PLA\
 
 
-**## Réalisation des bouchons à la découpeuse laser**\
-
+### **Réalisation des bouchons à la découpeuse laser** 
 
 Découper le PMMA 10 mm à la découpeuse laser.\
 Fichiers découpeuse laser pour bouchons
@@ -130,9 +129,7 @@ Rien à faire de particulier sur le bouchon D.
 
 <figure><img src=".gitbook/assets/20240731_172030.jpg" alt="" width="375"><figcaption><p>Perceuse à colonne à utiliser pour percer les bouchons B et C avec un forêt 2,5 mm et chanfreiner le bouchon A.</p></figcaption></figure>
 
-
-
-**## Découpe du tube PVC et de la barre filetée**
+### **Découpe du tube PVC et de la barre filetée**
 
 \
 Découper un cylindre de 24,5 cm de longueur dans le tube PVC avec la scie\
@@ -158,4 +155,4 @@ Limer les extrémités avec une lime à métaux pour faciliter l’insertion des
 
 <div align="left"><figure><img src=".gitbook/assets/20240731_165449.jpg" alt="" width="188"><figcaption></figcaption></figure></div>
 
-**## Assemblage**﻿\
+### **Assemblage**﻿ 
