@@ -64,11 +64,9 @@
 
 ﻿\
 ![](https://wikifactory.com/files/RmlsZTo5MDMwNzU=)﻿\
-![](https://wikifactory.com/files/RmlsZTo5MDMwOTE=)﻿\
+![](https://wikifactory.com/files/RmlsZTo5MDMwOTE=)﻿<br>
 
-
-**1. Souder les composants de la face avant (sauf pour l'horloge, le booster, la carte SD, l'ESP32 et l'opto isolateur où vous ne souderez que les pins à la face dans un premier temps).**![](https://wikifactory.com/files/RmlsZTo5MDMwNzg=)﻿\
-
+**1. Souder les composants de la face avant (sauf pour l'horloge, le booster, la carte SD, l'ESP32 et l'opto isolateur où vous ne souderez que les pins à la face dans un premier temps).**![](https://wikifactory.com/files/RmlsZTo5MDMwNzg=)﻿<br>
 
 > NB : - Pour le booster, souder les grandes pins vers le haut
 >
@@ -86,20 +84,17 @@ L'AtlasScientific (composant pour le capteur de salinité, couleur violet) doit 
 * Interrupteur à lames souples Reed Switch NO pour mode configuration - [Fournisseur](https://www.gotronic.fr/art-interrupteur-ils-1-rt-4082.htm)﻿
 
 ![](https://wikifactory.com/files/RmlsZTo5MDMwOTA=)﻿\
-﻿\
+﻿<br>
 
-
 >
 >
-> **2.﻿ Souder les composants de la face arrière**﻿\
->
+> **2.﻿ Souder les composants de la face arrière**﻿<br>
 >
 > <img src="https://wikifactory.com/files/RmlsZTo5MDMwNzc=" alt="" data-size="original">
 
 > Attention : à souder les supports batteries dans le bon sens (se référer au + et - dessinés sur les cartes PCB) et bien enlever les batteries lors de la soudure.
 
-**3. Souder ﻿ l'horloge, le booster, la carte SD, l'ESP32 et l'opto isolateur sur leurs pins**![](https://wikifactory.com/files/RmlsZTo5MDMwNzY=)![](https://wikifactory.com/files/RmlsZTo5NTMwNjQ=)﻿\
-
+**3. Souder ﻿ l'horloge, le booster, la carte SD, l'ESP32 et l'opto isolateur sur leurs pins**![](https://wikifactory.com/files/RmlsZTo5MDMwNzY=)![](https://wikifactory.com/files/RmlsZTo5NTMwNjQ=)﻿<br>
 
 * Lors de la soudure de ﻿l'interrupteur à lames souples Reed Switch, bien vérifier qu'il soit en position Fermé à l'aide d'un multimètre (le courant doit passer) et couper l'autre pin.
 * Dessouder les pins déjà présents sur l'optoisolateur Atlas.
@@ -109,8 +104,7 @@ L'AtlasScientific (composant pour le capteur de salinité, couleur violet) doit 
 
 **Fichiers pour imprimer la carte :**
 
-![](https://wikifactory.com/files/RmlsZTo5MDMwODg=)![](https://wikifactory.com/files/RmlsZTo5MDMwODk=)﻿\
-
+![](https://wikifactory.com/files/RmlsZTo5MDMwODg=)![](https://wikifactory.com/files/RmlsZTo5MDMwODk=)﻿<br>
 
 Gerber\_PCB\_Module\_CTD\_v2.3.zip
 
@@ -139,10 +133,9 @@ Vérifier à l'aide d'un multimètre que les soudures ne se touchent pas (notamm
 * Pour procéder en changement, munissez vous d'une alimentation stabilisée 5V (une Arduino ou une alimentation de laboratoire), et de 3 fils de connection.
 * Détachez le module vert du module violet et branchez-le de la sorte :
 
-![](.gitbook/assets/image.png)﻿\
-
+![](../Documentation/.gitbook/assets/image.png)﻿<br>
 
 * Le LED s'allume en bleu, c'est bon !
 * Remettez le module vert sur le module violet (dans le bon sens !)
 
-Lien de la doc : [https://files.atlas-scientific.com/EC\_EZO\_Datasheet.pdf](https://files.atlas-scientific.com/EC_EZO_Datasheet.pdf)\
+Lien de la doc : [https://files.atlas-scientific.com/EC\_EZO\_Datasheet.pdf](https://files.atlas-scientific.com/EC_EZO_Datasheet.pdf)<br>

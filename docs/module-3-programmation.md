@@ -1,7 +1,6 @@
 # Module 3 : Programmation
 
-Le **code** se trouve sur : [https://github.com/CedricCourson/LittObs](https://github.com/CedricCourson/LittObs)﻿﻿\
-
+Le **code** se trouve sur : [https://github.com/CedricCourson/LittObs](https://github.com/CedricCourson/LittObs)﻿﻿<br>
 
 > **Etapes de construction :**
 >
@@ -15,30 +14,26 @@ Le **code** se trouve sur : [https://github.com/CedricCourson/LittObs](https://g
 * Si vous utilisez un Mac ou un PC sous windows, suivez le lien suivant et suivez les instructions : ﻿https://docs.wemos.cc/en/latest/ch340\_driver.html
 * Si vous uti﻿lisez Linux, le module est déjà installé (si vous rencontrez des problèmes, vérifiez avec dmesg qu'il n'y a pas un autre driver qui cause des incompatibilités comme brltty)
 
-﻿\
-
+﻿<br>
 
 **2. Installer Arduino**
 
 * Télécharger le logiciel Arduino : [﻿https://www.arduino.cc/en/software](https://www.arduino.cc/en/software)﻿
 * Suivre les instructions ﻿d'installation [https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing)﻿
 
-﻿\
-
+﻿<br>
 
 **3. Installer la carte ESP32 Firebeetle**
 
 * dans le menu Files > Preferences, ajouter ﻿l'URL suivant dans "Additional board manager" et cliquer sur OK : [http://download.dfrobot.top/FireBeetle/package\_esp32\_index.json](http://download.dfrobot.top/FireBeetle/package_esp32_index.json)﻿
 
 ﻿\
-![](https://wikifactory.com/files/RmlsZTo5OTc2NDE=)﻿\
-
+![](https://wikifactory.com/files/RmlsZTo5OTc2NDE=)﻿<br>
 
 * Dans le menu Tools > Board > Boards manager : chercher ESP32
 * Installer "esp32 by Espressif Systems" library
 
-﻿\
-
+﻿<br>
 
 **4. Installer les librairies**
 
@@ -113,8 +108,7 @@ Le **code** se trouve sur : [https://github.com/CedricCourson/LittObs](https://g
 * Détachez le module vert du module violet et branchez-le de la sorte :
 
 ﻿\
-![](https://wikifactory.com/files/RmlsZToxMDc3OTYw)﻿\
-
+![](https://wikifactory.com/files/RmlsZToxMDc3OTYw)﻿<br>
 
 * Le LED s'allume en bleu = c'est bon !
 * Remettez le module vert sur le module violet (dans le bon sens !)
@@ -132,8 +126,7 @@ Lien de la doc : [https://files.atlas-scientific.com/EC\_EZO\_Datasheet.pdf](htt
 * Télécharger le dossier du projet sur github : [https://github.com/CedricCourson/LittObs](https://github.com/CedricCourson/LittObs)﻿
 * Dézipper le dossier
 
-﻿\
-
+﻿<br>
 
 **2. Configurer la carte SD**
 
@@ -143,8 +136,7 @@ Si la sonde n'a pas encore de carte SD
 * L'ouvrir sur un PC
 * La formater en FAT32
 
-﻿\
-
+﻿<br>
 
 **3. Configurer la sonde**
 
@@ -175,8 +167,7 @@ led_mode=1;
 * Changer le ﻿paramètre OSOCTD022 pour qu'il corresponde au nom de la sonde (par exemple : AELO007)
 * Laisser les autres paramètres tels quel﻿s
 
-﻿\
-
+﻿<br>
 
 **4. Vérifier que l'ESP communique**
 
@@ -276,18 +267,15 @@ Blue Robotics Bar30: White=SDA, Green=SCL
 * Le LED s'allume en bleu, c'est bon !
 * Remettez le module vert sur le module violet (dans le bon sens !)
 
-Lien de la doc : [https://files.atlas-scientific.com/EC\_EZO\_Datasheet.pdf](https://files.atlas-scientific.com/EC_EZO_Datasheet.pdf)﻿﻿\
-
+Lien de la doc : [https://files.atlas-scientific.com/EC\_EZO\_Datasheet.pdf](https://files.atlas-scientific.com/EC_EZO_Datasheet.pdf)﻿﻿<br>
 
 **6. Vérifier que les capteurs communiquent avec l'ESP**
 
-...﻿\
-
+...﻿<br>
 
 **7. Vérifier que l'alimentation sur batterie fonctionne**
 
-...﻿\
-
+...﻿<br>
 
 **8. Tester le WIFI**
 
