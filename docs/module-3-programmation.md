@@ -11,7 +11,7 @@ Le **code** se trouve sur : [https://github.com/CedricCourson/LittObs](https://g
 
 **1. Installer le driver CH340 ou CH341**
 
-* Si vous utilisez un Mac ou un PC sous windows, suivez le lien suivant et suivez les instructions : ﻿https://docs.wemos.cc/en/latest/ch340\_driver.html
+* Si vous utilisez un Mac ou un PC sous windows, suivez le lien suivant et suivez les instructions : [https://cdn.sparkfun.com/assets/learn\_tutorials/8/4/4/CH341SER.EXE](https://cdn.sparkfun.com/assets/learn_tutorials/8/4/4/CH341SER.EXE)
 * Si vous uti﻿lisez Linux, le module est déjà installé (si vous rencontrez des problèmes, vérifiez avec dmesg qu'il n'y a pas un autre driver qui cause des incompatibilités comme brltty)
 
 ﻿<br>
@@ -25,64 +25,60 @@ Le **code** se trouve sur : [https://github.com/CedricCourson/LittObs](https://g
 
 **3. Installer la carte ESP32 Firebeetle**
 
-* dans le menu Files > Preferences, ajouter ﻿l'URL suivant dans "Additional board manager" et cliquer sur OK : [http://download.dfrobot.top/FireBeetle/package\_esp32\_index.json](http://download.dfrobot.top/FireBeetle/package_esp32_index.json)﻿
+* dans le menu Files > Preferences, ajouter ﻿l'URL suivant dans "Additional board manager" et cliquer sur OK : [https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package\_esp32\_index.json  <br>](https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json)﻿
 
 ﻿\
 ![](https://wikifactory.com/files/RmlsZTo5OTc2NDE=)﻿<br>
 
 * Dans le menu Tools > Board > Boards manager : chercher ESP32
-* Installer "esp32 by Espressif Systems" library
+* Installer "esp32 _by Espressif Systems_" library<br>
 
-﻿<br>
+**4. Vérification avec un code simple pour faire clignoter une LED**&#x20;
 
-**4. Installer les librairies**
-
-* Télécharger le zip du github SensOcean où se trouve un dossier "Librairies" contenant toutes les librairies nécessaires : [https://github.com/astrolabe-expeditions/SensOcean](https://github.com/astrolabe-expeditions/SensOcean)﻿
-* Placer les fichiers sur votre ordinateur, dans Document, créer un dossier Arduino et déposez y les librairies
-* Vérifier que tout marche bien :
-* brancher votre carte ESP32 à l'ordinateur
-* sélectionner ﻿FireBeetle-ESP32 pour le port de communication (COM...) sur lequel vous l'avez branché
+* Brancher votre carte ESP32 à l'ordinateur
+* Sélectionner ﻿FireBeetle-ESP32 pour le port de communication (COM...) sur lequel vous l'avez branché (COM... correspond au nom du port USB  de votre ordinateur)
 * ![](https://wikifactory.com/files/RmlsZTo5OTc2NDQ=)
 * Coller le code suivant dans la fenêtre de travail et téléversez le sur l'ESP32 :
 
-> int led = 2;﻿\
-> void setup() {// put your setup code here, to run once:Serial.begin(115200);Serial.println("Coucou ! ");pinMode(led, OUTPUT);digitalWrite(led, LOW);}﻿\
-> void loop() {Serial.println("Start boucle");﻿\
-> for (int i=0; i<15; i++){
->
-> ```
-> digitalWrite\(led, HIGH\);
-> ```
->
-> ```
+> <pre class="language-arduino"><code class="lang-arduino">// Ceci est un commentaire
+> // Port de la LED
+> int led = 2;
 > ﻿
-> ```
->
-> ```
-> delay\(200\);
-> ```
->
-> ```
-> ﻿
-> ```
->
-> ```
-> digitalWrite\(led, LOW\);
-> ```
->
-> ```
-> ﻿
-> ```
->
-> ```
-> delay\(200\);
-> ```
->
-> }﻿\
-> delay(1000);// put your main code here, to run repeatedly:﻿\
+> void setup() {
+>     // put your setup code here, to run once:
+>     // Permet d'activer la communication avec le terminal (Serial Monitor), réglé lui aussi sur 115200
+>     Serial.begin(115200);
+>     // Affichage dans la console
+>     Serial.println("Coucou ! ");
+>     // Active le mode OUTPUT pour le port de la LED
+> <strong>    pinMode(led, OUTPUT);
+> </strong><strong>    // Eteint la LED
+> </strong>    digitalWrite(led, LOW);
 > }
+> ﻿
+> void loop() {
+>     // put your main code here, to run repeatedly:﻿
+>     Serial.println("Start boucle");﻿
+>     for (int i=0; i&#x3C;15; i++){
+>         // Allume la LED
+>         digitalWrite(led, HIGH);
+>         // Attend 200 ms
+>         delay(200);
+>         // Eteint la LED
+>         digitalWrite(led, LOW);
+>         // Attend 200 ms
+>         delay(200);
+>         }﻿
+>     delay(1000);
+> }
+> </code></pre>
 
-﻿\
+﻿5. **Installer les librairies**
+
+* Télécharger le zip du github SensOcean où se trouve un dossier "Librairies" contenant toutes les librairies nécessaires : [https://github.com/astrolabe-expeditions/SensOcean](https://github.com/astrolabe-expeditions/SensOcean)﻿
+* Placer les fichiers sur votre ordinateur, dans Document, créer un dossier Arduino et déposez y les librairies
+
+\
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 ## Test
