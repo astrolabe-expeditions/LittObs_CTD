@@ -133,7 +133,7 @@ Vérifier à l'aide d'un multimètre que les soudures ne se touchent pas (notamm
 * Pour procéder en changement, munissez vous d'une alimentation stabilisée 5V (une Arduino ou une alimentation de laboratoire), et de 3 fils de connection.
 * Détachez le module vert du module violet et branchez-le de la sorte :
 
-![](../Documentation/.gitbook/assets/image.png)﻿<br>
+![](./.gitbook/assets/image.png)﻿<br>
 
 * Le LED s'allume en bleu, c'est bon !
 * Remettez le module vert sur le module violet (dans le bon sens !)
