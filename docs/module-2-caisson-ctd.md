@@ -57,7 +57,7 @@ Caisson conçu pour les sondes CTD.
 
 ## **Pièces**
 
-<figure><img src="../Documentation/.gitbook/assets/Pièces LAMOS LittObs (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="./.gitbook/assets/Pièces LAMOS LittObs (15).png" alt=""><figcaption></figcaption></figure>
 
 <mark style="background-color:$danger;">**AJOUTER LES PIECES 3D calle-corde**</mark>&#x20;
 
@@ -88,51 +88,51 @@ _<mark style="color:orange;">Matériau : PMMA 10mm / Puissance : 100 / Vitesse :
 
 <mark style="background-color:$danger;">Bouchons  :</mark><br>
 
-<figure><img src="../Documentation/.gitbook/assets/Bouchon A.jpg" alt="" width="188"><figcaption><p>Bouchon A</p></figcaption></figure>
+<figure><img src="./.gitbook/assets/Bouchon A.jpg" alt="" width="188"><figcaption><p>Bouchon A</p></figcaption></figure>
 
 <mark style="background-color:$danger;">Chanfreiner l’ouverture centrale du bouchon A à 1,5 mm de profondeur avec la</mark>\ <mark style="background-color:$danger;">perceuse à colonne (équipée d’une fraise à chanfreiner de 15 mm de diamètre). Ne pas chanfreiner plus profond que 2 mm. Pour que le chanfrein soit lisse ajuster la vitesse de la perceuse à colonne au minimum (500 rpm). Le joint qui s'y glissera fait 2 mm de diamètre.</mark>
 
-<figure><img src="../Documentation/.gitbook/assets/Bouchon B.jpg" alt="" width="188"><figcaption><p>Bouchon B</p></figcaption></figure>
+<figure><img src="./.gitbook/assets/Bouchon B.jpg" alt="" width="188"><figcaption><p>Bouchon B</p></figcaption></figure>
 
 <mark style="background-color:$danger;">Tarauder les 4 petits pas de vis du bouchon B en M3. Tarauder les deux grands pas de vis opposés du bouchon B en M10.</mark>
 
-<figure><img src="../Documentation/.gitbook/assets/Bouchon C.jpg" alt="" width="188"><figcaption><p>Bouchon C</p></figcaption></figure>
+<figure><img src="./.gitbook/assets/Bouchon C.jpg" alt="" width="188"><figcaption><p>Bouchon C</p></figcaption></figure>
 
 <mark style="background-color:$danger;">Les cibles sur le bouchon C correspondent à la position de deux perçages non-</mark>\ <mark style="background-color:$danger;">traversants. Percer les cibles à 6 mm de profondeur avec la perceuse à colonne</mark>\ <mark style="background-color:$danger;">(équipée d'un foret à acier de 2,5 mm de diamètre). Tarauder ensuite les pas de vis en M3.</mark>
 
-<figure><img src="../Documentation/.gitbook/assets/Bouchon D (1).jpg" alt="" width="188"><figcaption><p>Bouchon D</p></figcaption></figure>
+<figure><img src="./.gitbook/assets/Bouchon D (1).jpg" alt="" width="188"><figcaption><p>Bouchon D</p></figcaption></figure>
 
 <mark style="background-color:$danger;">Rien à faire de particulier sur le bouchon D.</mark>
 
 A l'aide d'un taraud M10, tarauder les pièces 23 et 24.
 
-<div><figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-09-25 at 19.36.10 (1).jpeg" alt=""><figcaption></figcaption></figure> <figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-09-25 at 19.36.08.jpeg" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="./.gitbook/assets/WhatsApp Image 2025-09-25 at 19.36.10 (1).jpeg" alt=""><figcaption></figcaption></figure> <figure><img src="./.gitbook/assets/WhatsApp Image 2025-09-25 at 19.36.08.jpeg" alt=""><figcaption></figcaption></figure></div>
 
 Les cibles sur la paroi 26 correspondent à la position de deux perçages non-traversants sur la paroi 25. Percez les cibles sur la pièce 25 à 6 mm de profondeur avec la perceuse à colonne (équipée d'un foret à acier de 2,5 mm de diamètre). Tarauder ensuite en M3 les pièces 25 et 26.
 
-<figure><img src="../Documentation/.gitbook/assets/20240731_172030.jpg" alt="" width="375"><figcaption><p>Perceuse à colonne à utiliser pour percer la pièce 25 avec un forêt 2,5 mm</p></figcaption></figure>
+<figure><img src="./.gitbook/assets/20240731_172030.jpg" alt="" width="375"><figcaption><p>Perceuse à colonne à utiliser pour percer la pièce 25 avec un forêt 2,5 mm</p></figcaption></figure>
 
 ## **Étape 4 : Assemblage des bouchons**
 
 Pour assembler le bouchon avant, superposez la pièce 24 sur la pièce 23 en alignant bien les trous centraux puis placez un joint taurique (27) à la jonction entre les deux pièces.
 
-<div><figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.43 (2).jpeg" alt=""><figcaption></figcaption></figure> <figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.44.jpeg" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="./.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.43 (2).jpeg" alt=""><figcaption></figcaption></figure> <figure><img src="./.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.44.jpeg" alt=""><figcaption></figcaption></figure></div>
 
 Vissez ensuite l’interrupteur (22) et le <mark style="color:$warning;background-color:$danger;">??</mark> dans les trous de la pièce 23 (paroi extérieure du bouchon):&#x20;
 
-<figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.42 (1).jpeg" alt="" width="188"><figcaption></figcaption></figure>
+<figure><img src="./.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.42 (1).jpeg" alt="" width="188"><figcaption></figcaption></figure>
 
 Vissez la grande calle (29) à la pièce 24 (paroi arrière du bouchon) à l’aide de 4 petites visses M3 de 20mm.&#x20;
 
-<div><figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.58.jpeg" alt=""><figcaption></figcaption></figure> <figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.44 (1).jpeg" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="./.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.58.jpeg" alt=""><figcaption></figcaption></figure> <figure><img src="./.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.44 (1).jpeg" alt=""><figcaption></figcaption></figure></div>
 
 Assembler maintenant le second bouchon à l'aides des pièces 25, 26, 27 et 28 et de 2 petites visses M3.&#x20;
 
-<div><figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-10-08 at 18.35.59 (1).jpeg" alt=""><figcaption></figcaption></figure> <figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-10-08 at 18.35.59.jpeg" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="./.gitbook/assets/WhatsApp Image 2025-10-08 at 18.35.59 (1).jpeg" alt=""><figcaption></figcaption></figure> <figure><img src="./.gitbook/assets/WhatsApp Image 2025-10-08 at 18.35.59.jpeg" alt=""><figcaption></figcaption></figure></div>
 
 Callez et vissez la carte électronique à la grande calle (29) à l’aide de 2 petites visses en nylon <mark style="color:$warning;background-color:$danger;">type M?</mark>
 
-<figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.42 (3).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="./.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.42 (3).jpeg" alt=""><figcaption></figcaption></figure>
 
 ## **Étape 5 : Découpe et chanfreinage du tube**
 
@@ -140,12 +140,12 @@ Dans un tube en PVC PN16 de 63mm de diamètre, découpez un cylindre de 24,5 cm 
 
 Chanfreinez les bords du tube, avec une défonceuse (ou affleureuse) montée à l'envers sur une petite table avec une fraise à roulement à 45°. Réglez la profondeur d'usinage (sortie de la fraise par rapport à la table) de telle sorte à faire un logement suffisant pour le joint.
 
-<div><figure><img src="../Documentation/.gitbook/assets/20240709_171148.jpg" alt=""><figcaption></figcaption></figure> <figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-09-30 at 18.37.48.jpeg" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="./.gitbook/assets/20240709_171148.jpg" alt=""><figcaption></figcaption></figure> <figure><img src="./.gitbook/assets/WhatsApp Image 2025-09-30 at 18.37.48.jpeg" alt=""><figcaption></figcaption></figure></div>
 
 Si besoin, découpez également les tige filetées, pour cela, fixez les dans un étau, avec des cales en bois pour la protéger. Découpez trois tiges de 28,5 cm de longueur avec la scie sauteuse (équipée d'un foret à métaux). Limez les extrémités avec une lime à métaux pour faciliter l’insertion des écrous à oreilles.\
-![](<../Documentation/.gitbook/assets/20240731_162153 (1).jpg>)
+![](<./.gitbook/assets/20240731_162153 (1).jpg>)
 
-<div align="left"><figure><img src="../Documentation/.gitbook/assets/20240731_165449.jpg" alt="" width="188"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="./.gitbook/assets/20240731_165449.jpg" alt="" width="188"><figcaption></figcaption></figure></div>
 
 ## **Étape 6 : Assemblage du tube**
 
@@ -155,7 +155,7 @@ Placez des écrous borgnes au bout des 3 tiges filetés (20).
 
 Emboiter la pièce 31 par l'autre extrémité des tiges filetés et faites la glisser jusqu'aux écrous.&#x20;
 
-<figure><img src="../Documentation/.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.41 (3).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="./.gitbook/assets/WhatsApp Image 2025-09-30 at 18.22.41 (3).jpeg" alt=""><figcaption></figcaption></figure>
 
 Faites glisser l'assemblage bouchon avant + grande calle + PCB dans les tiges filetés.&#x20;
 
