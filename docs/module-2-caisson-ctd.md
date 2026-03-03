@@ -39,15 +39,17 @@ Caisson conçu pour les sondes CTD.
 
 ## ﻿﻿Outils
 
-* Outils de base (tournevis, pince plate, pince coupante, clef anglaise, clef plate...)
-* Imprimante 3D (pour support PCB et fixation CTD)
+* Imprimante 3D
 * Découpeuse laser
-* Perceuse à colonne (avec foret à acier 2,5mm)
-* Lime à métaux
-* Scie sauteuse (avec lame à métaux)
-* Tarauds
-* Scie circulaire
-* Affleureuse
+* Scie à métaux
+* Tarauds M3 et M10
+* Tournevis cruciformes
+* Pince plate ou multiprise
+* Pistolet à colle
+* Clé plate 7 et 8 mm
+* Perceuse + foret de 2,5 mm
+* Fraise à chanfreiner à 45° avec roulement
+* Graisse
 
 ### Vue d'ensemble du caisson
 
@@ -59,8 +61,6 @@ Caisson conçu pour les sondes CTD.
 
 <figure><img src=".gitbook/assets/Pièces LAMOS LittObs (15).png" alt=""><figcaption></figcaption></figure>
 
-<mark style="background-color:$danger;">**AJOUTER LES PIECES 3D calle-corde**</mark>
-
 ### **Étape 1 : Impression 3D**
 
 À l'aide d'une imprimante 3D, de filament PLA ou PETG et des fichiers ci-dessous, imprimez les pièces 28 et 29 à 15% de remplissage.&#x20;
@@ -68,9 +68,16 @@ Caisson conçu pour les sondes CTD.
 * ​[PCB\_Support.stl](https://github.com/astrolabe-expeditions/LittObs_OSOLAMOS/tree/5120c5b76e9a005e6e9b74700a093cbc68596c3f/hardware/enclosures/box_elec)​
 * ​[PCB\_Holder.stl](https://github.com/astrolabe-expeditions/LittObs_OSOLAMOS/tree/5120c5b76e9a005e6e9b74700a093cbc68596c3f/hardware/enclosures/box_elec)
 
-Imprimer également la pièce 31 avec un remplissage plus élevé (>30%) pour plus de résistance car elle sera soumise à plus d'efforts mécaniques.
+Imprimer également la pièce 31 avec un remplissage plus élevé (>30%) et avec du filament PETG pour plus de résistance car elle sera soumise à plus d'efforts mécaniques.
 
 * ​[Sensor\_protection.stl](https://github.com/astrolabe-expeditions/LittObs_OSOLAMOS/tree/5120c5b76e9a005e6e9b74700a093cbc68596c3f/hardware/enclosures/box_elec)
+
+Imprimer également les 2 support qui permettront de fixer la sonde sur la ligne de mouillage (étant donné qu'il y a 2 fixations, les 3 pièces ci-dessous sont à imprimées en 2 exemplaires) :&#x20;
+
+* [Fixation\_capot\_fermeture.stl](../hardware/enclosures/Fixation_capot_fermeture.stl)
+* [Fixation\_charniere.stl](../hardware/enclosures/Fixation_charniere.stl)
+* [Fixation\_corps.stl](../hardware/enclosures/Fixation_corps.stl)
+* [Fixation\_molette.stl](../hardware/enclosures/Fixation_molette.stl)
 
 ## **Étape 2 : Découpe laser**
 
