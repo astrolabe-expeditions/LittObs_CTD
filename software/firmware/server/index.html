@@ -31,8 +31,33 @@
   <hr>
   
   <p><h2>Configuration</h2></p>
- 
+  <p class="textinfo">Here is the basic configuration of the device. You can change the delay of the acquisition and he quantity of measure per batch (to do a mean or median). With a delay of 30min (1800s) 1 battery can last 1 month. You can download the configuration file and change directly the values in this web interface.<p>
   <p><a href="config.txt" download><button>Download configuration file</button></a></p>
+  
+  <table>
+	<tr>
+		<td>
+			<h3> Configuration values </h3>
+		</td>
+		<td>
+			<h3> New config </h3>
+		</td>
+	</tr>
+	<tr>
+		<th class="box">	
+			<object data="config.txt" width=100%> </object> 
+		</th>
+		<th>
+			<form action="/get">
+				Delay (s) <input type="number" name="input1" required><br>
+				Quantity  <input type="number" name="input2" required><br>
+				Debug (1 or 0) <input type="number" name="input3" required><br>
+				Led (1 or 0) <input type="number" name="input4" required><br><br>
+				<input type="submit" value="Submit">
+			</form>
+		</th>
+	</tr>
+  </table>
   
  
   <hr>
