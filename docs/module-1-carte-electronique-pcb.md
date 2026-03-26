@@ -5,8 +5,6 @@
 * Soudure
 * Électronique
 
-
-
 > **Étapes de construction :**
 >
 > 1. Souder tous les pins de la face avant
@@ -57,7 +55,7 @@
 * 2 Résistances 4,7kOhm de pullup pour I2C
 * 1 résistance de 4.7KOhm de pulldown pour l’isolateur
 * interrupteur à lames souples Reed Switch NF 1A pour interrupteur alimentation - [Fournisseur](https://www.gotronic.fr/art-interrupteur-ils-1-t-4080.htm)﻿
-* Embase pour CI, JST x2&#x20;
+* Embase pour CI, JST x2
 * Transistor 2N3904
 * Pololu Step-up 5v U1V11F5 - [Fournisseur](https://www.gotronic.fr/art-booster-5-v-u1v11f5-21751.htm)﻿
 * Interrupteur on/off - [Fournisseur﻿](https://fr.rs-online.com/web/p/interrupteurs-a-glissiere/7347296)﻿
@@ -86,8 +84,6 @@ L'AtlasScientific (composant pour le capteur de salinité, couleur violet) doit 
 ![](https://wikifactory.com/files/RmlsZTo5MDMwOTA=)﻿\
 ﻿<br>
 
->
->
 > **2.﻿ Souder les composants de la face arrière**﻿<br>
 >
 > <img src="https://wikifactory.com/files/RmlsZTo5MDMwNzc=" alt="" data-size="original">
@@ -106,15 +102,15 @@ L'AtlasScientific (composant pour le capteur de salinité, couleur violet) doit 
 
 ![](https://wikifactory.com/files/RmlsZTo5MDMwODg=)![](https://wikifactory.com/files/RmlsZTo5MDMwODk=)﻿<br>
 
-Vous trouverez les fichiers Gerber en suivant : hardware/pcbs/GERBER_PCB_CTD_v2.3
+Vous trouverez les fichiers Gerber en suivant : hardware/pcbs/GERBER\_PCB\_CTD\_v2.3
+
+{% file src=".gitbook/assets/PCB_CTD_v2.3 (1).zip" %}
 
 #### 1. Hardware
 
 **Vérifier les soudures**
 
 Vérifier à l'aide d'un multimètre que les soudures ne se touchent pas (notamment les transistors qui ont des pattes très rapprochées
-
-
 
 **Vérifier le bon fonctionnement du module EZO (petit module vert sur lequel on vient connecter la sonde de conductimétrie)**
 
@@ -127,7 +123,7 @@ Vérifier à l'aide d'un multimètre que les soudures ne se touchent pas (notamm
 * Pour procéder en changement, munissez vous d'une alimentation stabilisée 5V (une Arduino ou une alimentation de laboratoire), et de 3 fils de connection.
 * Détachez le module vert du module violet et branchez-le de la sorte :
 
-![](./.gitbook/assets/image.png)﻿<br>
+![](.gitbook/assets/image.png)﻿<br>
 
 * Le LED s'allume en bleu, c'est bon !
 * Remettez le module vert sur le module violet (dans le bon sens !)
