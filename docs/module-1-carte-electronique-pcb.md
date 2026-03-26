@@ -106,13 +106,7 @@ L'AtlasScientific (composant pour le capteur de salinité, couleur violet) doit 
 
 ![](https://wikifactory.com/files/RmlsZTo5MDMwODg=)![](https://wikifactory.com/files/RmlsZTo5MDMwODk=)﻿<br>
 
-Gerber\_PCB\_Module\_CTD\_v2.3.zip
-
-[https://wikifactory.com/preview/RmlsZTo4ODYyMjY=](https://wikifactory.com/preview/RmlsZTo4ODYyMjY=)
-
-
-
-Test
+Vous trouverez les fichiers Gerber en suivant : hardware/pcbs/GERBER_PCB_CTD_v2.3
 
 #### 1. Hardware
 
