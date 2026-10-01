@@ -74,10 +74,10 @@ Imprimer également la pièce 31 avec un remplissage plus élevé (>30%) et avec
 
 Imprimer également les 2 support qui permettront de fixer la sonde sur la ligne de mouillage (étant donné qu'il y a 2 fixations, les 3 pièces ci-dessous sont à imprimées en 2 exemplaires) :&#x20;
 
-* [Fixation\_capot\_fermeture.stl](../hardware/enclosures/Fixation_capot_fermeture.stl)
-* [Fixation\_charniere.stl](../hardware/enclosures/Fixation_charniere.stl)
-* [Fixation\_corps.stl](../hardware/enclosures/Fixation_corps.stl)
-* [Fixation\_molette.stl](../hardware/enclosures/Fixation_molette.stl)
+* [Fixation\_capot\_fermeture.stl](https://github.com/astrolabe-expeditions/LittObs_CTD/blob/main/hardware/enclosures/Fixation_capot_fermeture.stl)
+* [Fixation\_charniere.stl](https://github.com/astrolabe-expeditions/LittObs_CTD/blob/main/hardware/enclosures/Fixation_charniere.stl)
+* [Fixation\_corps.stl](https://github.com/astrolabe-expeditions/LittObs_CTD/blob/main/hardware/enclosures/Fixation_corps.stl)
+* [Fixation\_molette.stl](https://github.com/astrolabe-expeditions/LittObs_CTD/blob/main/hardware/enclosures/Fixation_molette.stl)
 
 ## **Étape 2 : Découpe laser**
 
@@ -86,10 +86,10 @@ Imprimer également les 2 support qui permettront de fixer la sonde sur la ligne
 * ​[PMMA\_Caps\_TD.svg](https://github.com/astrolabe-expeditions/LittObs_OSOLAMOS/tree/5120c5b76e9a005e6e9b74700a093cbc68596c3f/hardware/enclosures/box_elec)
 
 _<mark style="color:$info;">**Réglages de la découpeuse laser Trotec**</mark>_\
-&#xNAN;_<mark style="color:$info;">\* pour la gravure :</mark>_\
-&#xNAN;_<mark style="color:$info;">Matériau : PMMA / Puissance : 90 / Vitesse : 28/ Fréquence : 1000PPI</mark>_\
-&#xNAN;_<mark style="color:$info;">\* pour la découpe :</mark>_\
-&#xNAN;_<mark style="color:$info;">Matériau : PMMA 10mm / Puissance : 100 / Vitesse : 0.10 / Fréquence : 8000Hz</mark>_
+_<mark style="color:$info;">\* pour la gravure :</mark>_\
+_<mark style="color:$info;">Matériau : PMMA / Puissance : 90 / Vitesse : 28/ Fréquence : 1000PPI</mark>_\
+_<mark style="color:$info;">\* pour la découpe :</mark>_\
+_<mark style="color:$info;">Matériau : PMMA 10mm / Puissance : 100 / Vitesse : 0.10 / Fréquence : 8000Hz</mark>_
 
 ## **Étape 3 : Perçage et taraudage des bouchons**
 

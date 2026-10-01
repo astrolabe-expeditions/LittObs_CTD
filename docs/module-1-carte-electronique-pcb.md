@@ -62,7 +62,79 @@
 
 ﻿\
 ![](https://wikifactory.com/files/RmlsZTo5MDMwNzU=)﻿\
-![](https://wikifactory.com/files/RmlsZTo5MDMwOTE=)﻿<br>
+![](https://wikifactory.com/files/RmlsZTo5MDMwOTE=)
+
+﻿\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+#### Description des principaux composants de la PCB
+
+<figure><img src=".gitbook/assets/pcb-comments.png" alt=""><figcaption></figcaption></figure>
+
+**1) ESP32 → Microcontrôleur et module de communication**
+
+L’ESP32 est un microcontrôleur intégrant un processeur ainsi que des fonctionnalités de communication Wi-Fi et Bluetooth. C’est l’unité de contrôle principale de la carte électronique : il reçoit les informations provenant des capteurs, les traite et commande les différents composants de la PCB.
+
+Il exécute le programme codé sur Arduino, afin de réaliser automatiquement les mesures, de gérer leur enregistrement et de communiquer avec les différents capteurs.
+
+**2) Carte micro-SD → Stockage des données**
+
+La carte micro-SD permet de stocker les données récoltées par les différents capteurs. L’ESP32 peut écrire les mesures sur la carte afin de conserver un historique des données, même lorsque la carte n’est plus connectée à un ordinateur ou à un réseau.
+
+/!\ La carte micro-SD n'est pas visible sur cette photo. Elle est située sous le module ESP32.
+
+**3) LED → Indicateur visuel de l’état de fonctionnement de la carte**
+
+La led peut signaler que la carte est alimentée ou qu’une fonction particulière est active. Elle est associée à des résistances en série permettant de limiter le courant qui la traverse, afin d’éviter de l’endommager.
+
+**4) Résistances → Limitation et adaptation du courant et des signaux**
+
+Elles s’opposent au passage du courant électrique. Elles peuvent avoir plusieurs fonctions sur cette PCB : limiter le courant, notamment dans le circuit de la LED, mais aussi adapter les niveaux électriques ou assurer des fonctions de pull-up/pull-down pour les signaux numériques.
+
+À tension constante, une augmentation de la résistance (mesurée en ohms ( Ω) entraîne une diminution du courant (en Ampères (A)).
+
+**5) Horloge temps réel (HTR ou RTC en anglais) → Mesure et conservation du temps**
+
+Permet de conserver une référence temporelle précise et de connaître la date et l’heure auxquelles les mesures sont effectuées. Elle permet également de programmer les acquisitions de données : dans notre cas on effectue une mesure toutes les 15 minutes.
+
+La RTC possède sa propre source d’alimentation, ici une pile au lithium, ce qui lui permet de continuer à conserver l’heure lorsque l’alimentation principale de la carte est coupée.
+
+**6) Connecteurs mâles → Connexion des capteurs**
+
+Les connecteurs mâles permettent de relier les différents capteurs et périphériques à la carte électronique. Ils assurent la connexion électrique entre les capteurs et les circuits de la PCB.
+
+Un connecteur mâle possède des broches ou « pins » qui s’insèrent dans les contacts correspondants d’un connecteur femelle, qui possède des logements ou contacts réceptacles.
+
+**7) Condensateurs → Stockage temporaire et stabilisation de l’alimentation**
+
+Les condensateurs stockent temporairement de l’énergie électrique. Sur une PCB, ils sont notamment utilisés pour filtrer et stabiliser les tensions d’alimentation.
+
+**8) Circuit EZO de conductivité → Interface de mesure de la conductivité**
+
+Le circuit EZO Conductivity d’Atlas Scientific est une interface électronique dédiée à l'exploitation d'une sonde de conductivité. Il permet de transformer le signal provenant de la sonde en une information exploitable par le microcontrôleur.
+
+**9) Isolateur Atlas Scientific → Interface et isolation électrique du circuit de conductivité**
+
+La carte Atlas Scientific (en violet) sert d’interface entre le circuit EZO et le reste du système. La sonde de conductivité est connectée à cette partie du système par l'intermédiaire d’un connecteur.
+
+**10) Transistor → Commutation et commande électrique**
+
+Le transistor est un composant électronique permettant notamment de commuter (c'est-à-dire transférer un courant électrique d'un circuit à un autre) ou contrôler le passage du courant dans une partie du circuit.
+
+**11) Régulateur de tension → Stabilisation de la tension d’alimentation**
+
+Le régulateur de tension permet de fournir une tension électrique stable et adaptée aux composants électroniques, même lorsque la tension d’alimentation disponible varie. Il évite ainsi que les variations de la tension d'entrée ne se transmettent directement aux circuits sensibles comme l’ESP32 ou les capteurs.
+
+**12) Interrupteur → Mise sous/hors tension**
+
+L’interrupteur permet de contrôler le passage du courant électrique dans le circuit.
+
+* Interrupteur fermé → le circuit est conducteur et le courant peut circuler ;
+* Interrupteur ouvert → le circuit est interrompu et le courant ne circule plus dans la partie concernée.<br>
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+#### Soudure étape par étape
 
 **1. Souder les composants de la face avant (sauf pour l'horloge, le booster, la carte SD, l'ESP32 et l'opto isolateur où vous ne souderez que les pins à la face dans un premier temps).**![](https://wikifactory.com/files/RmlsZTo5MDMwNzg=)﻿<br>
 
